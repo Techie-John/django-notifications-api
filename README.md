@@ -9,6 +9,19 @@ This API allows users to send emails and Firebase push notifications instantly o
 - Schedule emails and notifications for future delivery.
 - Cancel scheduled emails and notifications.
 
+## Support Email Service Provider
+- Brevo
+- MailerSend
+- Mailgun
+- Mailjet
+- Mandrill
+- Postal
+- Postmark
+- Resend
+- SendGrid
+- SparkPost
+- Unisender Go
+
 ## Requirements
 - Python 3.6+
 - Django
@@ -33,9 +46,6 @@ This API allows users to send emails and Firebase push notifications instantly o
     - Create a Firebase project and obtain your service account credentials.
     - Save your credentials file as `credentials.json` in the appropriate directory.
 
-4. Configure your Django settings:
-    - Add `BREVO_API_KEY`, `DEFAULT_FROM_EMAIL` in .env file
-
 5. Run the migrations to set up the database:
     ```bash
     python manage.py migrate
@@ -53,7 +63,8 @@ This API allows users to send emails and Firebase push notifications instantly o
 - **Endpoint**: `/api/send_email/`
 - **Method**: `POST`
 - **Description**: Sends an email and optionally sends a push notification via Firebase.
-
+- **Request Header**: `X-Email-Service`, `X-Email-Service-API-Key`, `X-Email-Service-API-Secret` 
+- **Firebase Credential JSON** : If you want to notification, You have to send firebase credential JSON file with name `credential_file`
 #### **Request Body (JSON)**
 ```json
 {
@@ -94,6 +105,8 @@ This API allows users to send emails and Firebase push notifications instantly o
 - **Endpoint**: `/api/schedule_notification/`
 - **Method**: `POST`
 - **Description**: Schedules an email and/or a push notification via Firebase to be sent at a specified delivery time.
+- **Request Header**: `X-Email-Service`, `X-Email-Service-API-Key`, `X-Email-Service-API-Secret` 
+- **Firebase Credential JSON** : If you want to notification, You have to send firebase credential JSON file with name `credential_file`
 
 #### **Request Body (JSON)**
 ```json

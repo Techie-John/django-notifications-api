@@ -163,3 +163,4 @@ cython_debug/
 #.idea/
 /notifications/.env
 /notifications/mail_service/credentials.json
+notifications/mail_service/uploads/*

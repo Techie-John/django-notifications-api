@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mail_service.middleware.EmailServiceMiddleware'
 ]
 
 ROOT_URLCONF = 'notifications.urls'
@@ -128,10 +129,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-ANYMAIL = {
-    # (exact settings here depend on your ESP...)
-    "BREVO_API_KEY": config("BREVO_API_KEY"),
-}
-EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"  # or sendgrid.EmailBackend, or...
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")  # if you don't already have this in settings
