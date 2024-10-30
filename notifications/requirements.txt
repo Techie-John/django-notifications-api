@@ -1,0 +1,4 @@
+firebase-admin
+djangorestframework
+apscheduler
+python-decouple
