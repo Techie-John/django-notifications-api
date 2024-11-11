@@ -129,4 +129,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")  # if you don't already have this in settings
+#DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")  # if you don't already have this in settings
+
+DEFAULT_FROM_EMAIL = 'john@test.com'
